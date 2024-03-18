@@ -1,0 +1,18 @@
+{
+  "nav":{
+    "home": "Home",
+    "contacts":"Contacts",
+    "projects":"Projects"
+  },
+  "home":{
+    "bio":"My name is Artur",
+    "greetings":"Hello, I'm junior Web-developer",
+    "knowledge":"Knowledge",
+    "download_cv":"Download CV"
+  },
+  "contacts":{
+    "contacts":"Contacts",
+    "location":"Location",
+    "phone":"Number phone"
+  }
+}

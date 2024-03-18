@@ -1,0 +1,14 @@
+#root{
+    min-height: 100vh;
+}
+.app{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(218, 216, 212, 0.682);
+    background-image: url(https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg?w=1060&t=st=1710606191~exp=1710606791~hmac=29934cdd0b6c3428a05893af29a4a0c3f699e98e8208e8f9d3821dcb879b78f4);
+    background-size: cover;
+    background-position: center;
+}

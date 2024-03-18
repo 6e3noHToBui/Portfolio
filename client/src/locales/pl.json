@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Główna",
+    "contacts": "Kontakt",
+    "projects": "Projekty"
+  },
+  "home": {
+    "bio":"Mam na imię Artur",
+    "greetings":"Witam, jestem młodszym Web-programistą",
+    "knowledge":"Wiedza",
+    "download_cv":"Pobierz CV"
+  },
+  "contacts":{
+    "contacts":"Związek",
+    "location":"Lokalizacja",
+    "phone":"Numer telefonu"
+  }
+}
