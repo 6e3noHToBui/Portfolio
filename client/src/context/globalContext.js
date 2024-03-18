@@ -9,13 +9,23 @@ export const GlobalProvider = ({ children }) => {
 
     const getProjects = async () => {
         try {
-            const response = await axios.get(`${BASE_URL}get-projects`)
+            const response = await axios.get(`${BASE_URL}get-projects?lang=${localStorage.getItem('language')}`)
             setProjects(response.data)
-            console.log(response.data)
         } catch (error) {
             setError(error.message)
         }
     }
+    const sendMessage = async (formData, onSuccess, onError) => {
+        try {
+            const response = await axios.post(`${BASE_URL}send-message`, formData);
+            if (response.status === 200) {
+                onSuccess(response.data);
+            }
+        } catch (error) {
+            onError(error);
+            console.log(error.response.data.error[0])
+        }
+    };
 
     return (
         <GlobalContext.Provider
@@ -23,6 +33,7 @@ export const GlobalProvider = ({ children }) => {
                 error,
                 setError,
                 getProjects,
+                sendMessage,
                 projects
             }}
         >

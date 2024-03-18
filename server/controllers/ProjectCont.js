@@ -20,15 +20,20 @@ exports.addProject = async (req, res) => {
         const imageUrls = []
 
         for (const file of files) {
-            const params = {
-                Bucket: process.env.AWS_BUCKET,
-                Key: `portfolio/${uuidv4()}`, 
-                Body: file.buffer,
-                ContentType: file.mimetype,
-            };
-            const uploadResult = await s3Upload(params);
-            const imageUrl = uploadResult.Location;
-            imageUrls.push({url: imageUrl });
+            const existingImage = await Projects.findOne({ 'images.url': file.originalname })
+            if (existingImage) {
+                imageUrls.push({ url: existingImage.images[0].url })
+            } else {
+                const params = {
+                    Bucket: process.env.AWS_BUCKET,
+                    Key: `portfolio/${file.originalname}`, 
+                    Body: file.buffer,
+                    ContentType: file.mimetype,
+                }
+                const uploadResult = await s3Upload(params)
+                const imageUrl = uploadResult.Location
+                imageUrls.push({ url: imageUrl })
+            }
         }
         const projectExist = await Projects.findOne({name:name})
         if(projectExist){
@@ -56,8 +61,9 @@ exports.addProject = async (req, res) => {
 }
 
 exports.getProjects = async (req, res) => {
+    const lang = req.query.lang
     try {
-        const projects = await Projects.find().select('name description git_link images.url -_id');
+        const projects = await Projects.find().select(`name description.${lang} git_link images.url -_id`);
         if (!projects || projects.length === 0) {
             return res.status(400).json({ error: "Projects not found" });
         }
@@ -67,7 +73,7 @@ exports.getProjects = async (req, res) => {
             git_link: project.git_link,
             images: project.images.map(image => image.url)
         }));
-        res.status(200).json({ projects: formattedProjects });
+        res.status(200).json(formattedProjects );
     } catch (error) {
         console.log('Error fetching projects:', error);
         res.status(500).json({ error: "Server Error" });

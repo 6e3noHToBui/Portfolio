@@ -8,11 +8,23 @@
     "bio":"Mam na imię Artur",
     "greetings":"Witam, jestem młodszym Web-programistą",
     "knowledge":"Wiedza",
-    "download_cv":"Pobierz CV"
+    "download_cv":"Otwórz CV"
   },
   "contacts":{
     "contacts":"Związek",
     "location":"Lokalizacja",
-    "phone":"Numer telefonu"
+    "phone":"Numer telefonu",
+    "writeme":"Napisz coś do mnie",
+    "contactform":"Formularz kontaktowy",
+    "name":"Imię",
+    "email":"Poczta elektoniczna",
+    "message":"Powiadomienie",
+    "nameplaceholder":"Wprowadź imię (od 4 do 20 znaków)",
+    "emailplaceholder":"Wprowadź poztę elektroniczną",
+    "messageplaceholder":"Wpowadź powiadomienie (maksymalnie 500 znaków)",
+    "nameerror":"Błąd: Imię musi zawierać od 4 do 20 znaków",
+    "emailerror":"Wprowadź poprawną pocztę elektroniczną",
+    "messageerror":"Powiadomienie za krótkie. Minimalnie 1 znak",
+    "sendbuttontext":"Wyślij"
   }
 }

@@ -1,8 +1,8 @@
 const {model, Schema} = require('mongoose')
 
 const Messages = new Schema({
-    username:{type: String, require: true},
-    email:{type: String, require: true},
+    username:{type: String, required: true},
+    email:{type: String, required: true},
     message:{type: String}
 })
 
