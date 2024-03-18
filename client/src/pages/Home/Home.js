@@ -5,7 +5,7 @@ const Home = () => {
     const { t } = useTranslation();
 
     const handleDownloadCV = () => {
-        const cvUrl = 'https://elasticbeanstalk-us-east-1-268669009234.s3.amazonaws.com/portfolio/Artur+Moroz.pdf';
+        const cvUrl = 'https://elasticbeanstalk-us-east-1-268669009234.s3.amazonaws.com/portfolio/Artur++Moroz+CV.pdf';
         window.open(cvUrl, '_blank');
     };
     
