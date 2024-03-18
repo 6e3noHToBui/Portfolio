@@ -6,8 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server.js",
-    "build-all": "npm install && cd ../client && npm install",
-    "start-all": "npm run start && cd ../client && npm start"
+    "build": "npm install && npm run start"
   },
   "dependencies": {
     "aws-sdk": "^2.1579.0",
