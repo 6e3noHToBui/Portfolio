@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 const GlobalContext = React.createContext();
-const BASE_URL="http://localhost:5000/api/portfolio/"
+const BASE_URL="https://portfolio-1qx7.onrender.com/api/portfolio/"
 
 export const GlobalProvider = ({ children }) => {
     const [error, setError] = useState(null)
